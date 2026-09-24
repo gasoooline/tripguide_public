@@ -5,6 +5,20 @@ export interface GuideSource {
 
 const s = (title: string, url: string): GuideSource => ({ title, url });
 
+/** 移除小红书链接中的 PC 端会话参数，避免移动端 universal link 无法定位到具体帖子 */
+export function cleanXhsUrl(url: string): string {
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes('xiaohongshu.com')) {
+      u.searchParams.delete('xsec_token');
+      u.searchParams.delete('xsec_source');
+    }
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 const SOURCE_ORIGIN_LABELS: Record<string, string> = {
   'xiaohongshu.com': '小红书',
   'safetravel.is': 'SafeTravel 官网',

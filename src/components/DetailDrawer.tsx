@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { GuideItem, ThemeConfig } from '../types';
-import { sourceOriginLabel } from '../data/guideSources';
+import { sourceOriginLabel, cleanXhsUrl } from '../data/guideSources';
 import { X, CheckSquare, Square, AlertOctagon, Lightbulb, MapPin, Calendar, CircleDollarSign, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import TornEdge from './TornEdge';
@@ -210,7 +210,7 @@ export default function DetailDrawer({ item, onClose, theme }: DetailDrawerProps
                             return (
                               <a
                                 key={pIdx}
-                                href={part}
+                                href={cleanXhsUrl(part)}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
@@ -305,7 +305,7 @@ export default function DetailDrawer({ item, onClose, theme }: DetailDrawerProps
                 {item.sources.map((source, sIdx) => (
                   <li key={`${source.url}-${sIdx}`}>
                     <a
-                      href={source.url}
+                      href={cleanXhsUrl(source.url)}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}

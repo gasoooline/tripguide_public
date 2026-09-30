@@ -87,10 +87,10 @@ export const GUIDE_SPOT_ITEMS: GuideItem[] = [
     category: 'aurora',
     country: "both",
     title: "Action 4 / 5 拍极光参数",
-    shortDesc: "夜间延时关 EIS，电池贴暖宝宝，抗冻但成片弱于 Pocket。",
+    shortDesc: "懒人流四步 auto 照做出片，手动流关 EIS 控噪；电池贴暖宝宝。",
     iconName: "Sparkles",
     urgency: "medium",
-    tags: ["极光","Action","抗冻"],
+    tags: ["极光","Action","抗冻","懒人流"],
     location: "冰岛 / 罗弗敦极光机位",
     bookingNeeded: 'no',
     costRange: "自备三脚架",
@@ -102,13 +102,31 @@ export const GUIDE_SPOT_ITEMS: GuideItem[] = [
     coordinates: "",
     details: [
       {
-        sectionTitle: "参数",
+        sectionTitle: "⚡ 懒人流 · 小红书博主 Sam 实测（2026 元旦雷克雅未克极光爆发当晚，Action 5）",
+        items: [
+          "1. 左下角模式切换选 **「静止延时」**。",
+          "2. 进设置打开 **Pro 模式**。",
+          "3. 曝光设 **AUTO 自动挡**，数值（EV）**拉到最大**。",
+          "4. 回主页面，点**正下方设置**，把静止延时的时长选 **「日出日落」** 档，开拍就完事。"
+        ]
+      },
+      {
+        sectionTitle: "什么时候用哪套",
+        items: [
+          "爆发当晚人冷手抖、不想折腾参数 → **懒人流**，auto 兜底稳出片。",
+          "极光弱 / 想压噪点拍形态 → 用下面**手动流**精细控。",
+          "两条是不同路径：「静止延时 + 日出日落档」≠ Starlapse，别混着设。"
+        ]
+      },
+      {
+        sectionTitle: "🔧 手动流参数",
         items: [
           "模式：夜间延时 Starlapse / 手动 Pro；Action 5 Pro 有 Starlapse。",
           "ISO：Action 4 上限 800 更稳，Action 5 Pro 可到 3200。",
-          "快门 2–8 秒，Action 5 可到 15/30 秒。",
+          "快门 2–8 秒，Action 5 可到 15/30 秒；越长噪点越少，需三脚架。",
           "间隔 3–5 秒，与快门错开避免重叠。",
-          "关闭 EIS 防抖和畸变校正。"
+          "关闭 EIS 防抖：长曝光下 EIS 会插帧模糊。",
+          "关闭畸变校正：省算力，边缘不裁。"
         ]
       },
       {
@@ -119,7 +137,7 @@ export const GUIDE_SPOT_ITEMS: GuideItem[] = [
         ]
       }
     ],
-    quickChecklist: ["关 EIS","备暖宝宝贴电池","间隔 3–5 秒"]
+    quickChecklist: ["懒人流：静止延时+Pro+EV 最大","时长选「日出日落」档","手动流关 EIS 和畸变校正","备暖宝宝贴电池仓"]
   },
   {
     id: "spot-aur-prep",
